@@ -73,7 +73,9 @@ public class DvdRentalDB {
 		/* BEGIN */
 		if (conn != null) {
 			try {
+				System.out.println("Closing DB Connection...");
 				conn.close();
+				System.out.println("DB connection closed.");
 			} catch (SQLException e) {
 				System.out.println("Error closing connection: " + e.getMessage());
 			}

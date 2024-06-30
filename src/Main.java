@@ -10,7 +10,14 @@ public class Main {
 
         DvdRentalDB db = new DvdRentalDB(dbname, username, password);
 
-        db.closeDBConnection();
+        PrintWriter writer = new PrintWriter(System.out, true);
+
+        // Test getRentalsByCustomer with a known customer name
+        System.out.println("Testing getRentalsByCustomer...");
+        int rentalsCount = db.getRentalsByCustomer(writer, "Mary Smith");
+        System.out.println("Number of rentals: " + rentalsCount);
+
+        // db.closeDBConnection();
 
     }
 }
